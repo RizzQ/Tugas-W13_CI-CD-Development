@@ -26,4 +26,4 @@ jobs:
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn deploy
