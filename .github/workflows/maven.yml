@@ -24,6 +24,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        server-id: github
+        settings-path: ${{ github.workspace }}
+
+    - name: Build and test
+      run: mvn verify
+
     - name: Deploy to GitHub Packages
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       env:
